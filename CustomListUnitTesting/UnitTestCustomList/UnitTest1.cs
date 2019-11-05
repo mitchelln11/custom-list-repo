@@ -14,8 +14,8 @@ namespace UnitTestCustomList
             CustomClassList<int> list1 = new CustomClassList<int>();
             int expected = 5;
             int actual;
-            int number1 = 5;
-            int number2 = 5;
+            int number1 = 7;
+            int number2 = 6;
             int number3 = 5;
             int number4 = 5;
             int number5 = 5;
@@ -48,7 +48,7 @@ namespace UnitTestCustomList
             doublelist1.Add(double3);
             doublelist1.Add(double4);
             doublelist1.Add(double5);
-            actual = doublelist1.Count;
+            actual = doublelist1[4];
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -97,19 +97,17 @@ namespace UnitTestCustomList
         }
 
         [TestMethod]
-        public void Add_Based_On_Index()
+        public void Add_Based_On_Boolean()
         {
             //arrange
-            CustomClassList<int> list1 = new CustomClassList<int>();
-            int expected = 8;
-            int actual;
+            CustomClassList<string> list1 = new CustomClassList<string>();
+            bool expected = true;
+            bool actual;
+            bool trueTest = true;
 
             //act
-            list1.Add(4);
-            list1.Add(4);
-            list1.Add(4);
-            list1.Add(4);
-            actual = list1.Capacity;
+            list1.Add(trueTest);
+            actual = list1[0];
 
 
             //Assert
