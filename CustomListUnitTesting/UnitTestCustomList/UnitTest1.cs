@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CustomListUnitTesting;
+using CustomClassList;
 
 namespace UnitTestCustomList
 {
@@ -59,7 +59,7 @@ namespace UnitTestCustomList
             //arrange
             CustomClassList<string> stringlist1 = new CustomClassList<string>();
             string expected = "test5";
-            string actual;
+            int actual;
             string string1 = "test1";
             string string2 = "test2";
             string string3 = "test3";
