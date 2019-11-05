@@ -8,22 +8,24 @@ namespace CustomListUnitTesting
 {
     public class CustomClassList<T>
     {
-        private T[] items;
-        private int capacity;
-        private int count;
-
-        public int Count
-        {
-            get 
-            {
-                return count;    
-            }
-        }
-        public CustomClassList()
-        {
-            capacity = 4;
-            count = 0;
-            items = new T[capacity]; //Setting array inside CustomClassList
-        }
+        public int Count { get; }
+        private int Capacity { get; set; }
+        T[] items = new T[1];
     }
+    //constructor
+
+
+    //member methods
+    public void Add(T item)
+    {
+        items[0] = item;
+
+    }
+
+    public bool Remove(T item)
+    {
+
+        return true;
+    }
+}
 }

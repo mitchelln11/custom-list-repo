@@ -8,20 +8,112 @@ namespace UnitTestCustomList
     public class CustomListUnitTesting
     {
         [TestMethod]
-        public void Custom_List_Adding_Values()
+        public void CustomList_Add_AddingFiveValueArrayResize()
         {
             //arrange
-            CustomClassList<int> intList1 = new CustomClassList<int>();
-            int expected = 1;
+            CustomClassList<int> list1 = new CustomClassList<int>();
+            int expected = 5;
             int actual;
-            int number1 = 5; // Reference in 
+            int number1 = 5;
+            int number2 = 5;
+            int number3 = 5;
+            int number4 = 5;
+            int number5 = 5;
+            //act
+            list1.Add(number1);
+            list1.Add(number2);
+            list1.Add(number3);
+            list1.Add(number4);
+            list1.Add(number5);
+            actual = list1.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CustomList_Add_AddingFive_Double()
+        {
+            //arrange
+            CustomClassList<double> doublelist1 = new CustomClassList<double>();
+            double expected = 5.0;
+            double actual;
+            double double1 = 1.0;
+            double double2 = 2.0;
+            double double3 = 3.0;
+            double double4 = 4.0;
+            double double5 = 5.0;
+            //act
+            doublelist1.Add(double1);
+            doublelist1.Add(double2);
+            doublelist1.Add(double3);
+            doublelist1.Add(double4);
+            doublelist1.Add(double5);
+            actual = doublelist1.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CustomList_Add_AddingFiveStrings()
+        {
+            //arrange
+            CustomClassList<string> stringlist1 = new CustomClassList<string>();
+            string expected = "test5";
+            string actual;
+            string string1 = "test1";
+            string string2 = "test2";
+            string string3 = "test3";
+            string string4 = "test4";
+            string string5 = "test5";
+            //act
+            stringlist1.Add(string1);
+            stringlist1.Add(string2);
+            stringlist1.Add(string3);
+            stringlist1.Add(string4);
+            stringlist1.Add(string5);
+            actual = stringlist1.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_Swap_List()
+        {
+            //arrange
+            CustomClassList<int> list1 = new CustomClassList<int>();
+            int expected = 8;
+            int actual;
 
             //act
-            actual = intList1.Count;
+            list1.Add(4);
+            list1.Add(4);
+            list1.Add(4);
+            list1.Add(4);
+            actual = list1.Capacity;
+
 
             //Assert
             Assert.AreEqual(expected, actual);
+        }
 
+        [TestMethod]
+        public void Add_Based_On_Index()
+        {
+            //arrange
+            CustomClassList<int> list1 = new CustomClassList<int>();
+            int expected = 8;
+            int actual;
+
+            //act
+            list1.Add(4);
+            list1.Add(4);
+            list1.Add(4);
+            list1.Add(4);
+            actual = list1.Capacity;
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
