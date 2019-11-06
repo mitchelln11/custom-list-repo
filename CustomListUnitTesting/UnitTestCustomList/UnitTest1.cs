@@ -76,24 +76,25 @@ namespace UnitTestCustomList
         //    Assert.AreEqual(expected, actual);
         //}
 
-        //[TestMethod]
-        //public void Add_Swap_List()
-        //{
-        //    //arrange
-        //    CustomClassList<int> list1 = new CustomClassList<int>();
-        //    int expected = 8;
-        //    int actual;
+        [TestMethod]
+        public void Add_Swap_List()
+        {
+            //arrange
+            CustomClassList<int> list1 = new CustomClassList<int>();
+            int expected = 8;
+            int actual;
 
-        //    //act
-        //    list1.Add(4);
-        //    list1.Add(4);
-        //    list1.Add(4);
-        //    list1.Add(4);
-        //    actual = list1.Capacity;
+            //act
+            list1.Add(4);
+            list1.Add(4);
+            list1.Add(4);
+            list1.Add(4);
+            list1.Add(4);
+            actual = list1.Capacity;
 
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
         //[TestMethod]
         //public void Add_Based_On_Boolean()

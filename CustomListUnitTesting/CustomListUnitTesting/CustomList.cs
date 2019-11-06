@@ -62,13 +62,13 @@ namespace CustomClassList
             T[] tempArrayVal;
             if (count == capacity)
             {
-                capacity *= 2;
-                tempArrayVal = new T[capacity];
-                for (int i = 0; i < count; i++)
+                capacity *= 2; //double capacity amount
+                tempArrayVal = new T[capacity]; //Create empty list
+                for (int i = 0; i < count; i++) // If we don't loop through, all the values before this will reset to 0;
                 {
-                tempArrayVal[i] = items[i];
+                tempArrayVal[i] = items[i]; //set loop iteration to list
                 }
-                items = tempArrayVal;
+                items = tempArrayVal; // assign value 
             }
             items[count] = item;
             count++;
