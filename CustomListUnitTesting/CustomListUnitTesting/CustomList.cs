@@ -10,9 +10,25 @@ namespace CustomClassList
     {
         //member variables
 
-        private T[] arr = new T[100];
-        public int nextIndex = 0;
-        public T this[int i] => arr[i]; //Indexer to allow square brackets to check index
+        //private T[] arr = new T[100];
+        //public int nextIndex = 0;
+        //public T this[int i] => arr[i]; //Indexer to allow square brackets to check index
+
+
+
+        private double[] val = new double[3];
+        public T this[int i]
+        {
+            get
+            {
+                return items[i];
+            }
+            set
+            {  
+                items[i] = value;
+            }
+        }
+
 
         private int count;
         T[] items;
@@ -76,9 +92,9 @@ namespace CustomClassList
             items[count] = item;
             count++;
 
-            if (nextIndex >= arr.Length)
-                throw new IndexOutOfRangeException($"The collection can hold only {arr.Length} elements.");
-            arr[nextIndex++] = item;
+            //if (nextIndex >= arr.Length)
+            //    throw new IndexOutOfRangeException($"The collection can hold only {arr.Length} elements.");
+            //arr[nextIndex++] = item;
 
         }
 

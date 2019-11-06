@@ -35,7 +35,7 @@ namespace UnitTestCustomList
         {
             //arrange
             CustomClassList<double> doublelist1 = new CustomClassList<double>();
-            double expected = 5.0;
+            double expected = 5;
             double actual;
             double double1 = 1.0;
             double double2 = 2.0;
