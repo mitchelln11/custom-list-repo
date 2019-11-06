@@ -77,7 +77,7 @@ namespace UnitTestCustomList
         }
 
         [TestMethod]
-        public void Add_Swap_List()
+        public void Add_Capacity()
         {
             //arrange
             CustomClassList<int> list1 = new CustomClassList<int>();
@@ -117,5 +117,65 @@ namespace UnitTestCustomList
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        //----------------Remove Testing------------
+
+        [TestMethod]
+        public void CustomList_Remove_Count()
+        {
+            //arrange
+            CustomClassList<int> list1 = new CustomClassList<int>();
+            int expected = 4;
+            int actual;
+            //act
+            list1.Add(9);
+            list1.Add(8);
+            list1.Add(7);
+            list1.Remove(8);
+            list1.Add(5);
+            list1.Add(4);
+            actual = list1.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CustomList_Remove_Index()
+        {
+            //arrange
+            CustomClassList<double> doublelist1 = new CustomClassList<double>();
+            double expected = 3;
+            double actual;
+
+            //act
+            doublelist1.Add(5.0);
+            doublelist1.Add(4.0);
+            doublelist1.Add(3.0);
+            doublelist1.Remove(4.0);
+
+            actual = doublelist1[1];
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Add number 5, 10, 13, 5, 7, remove first 5 found
+        //[TestMethod]
+        //public void Remove_First_Instance_Of_value()
+        //{
+        //    //arrange
+        //    CustomClassList<int> list1 = new CustomClassList<int>();
+        //    int expected = 10;
+        //    int actual;
+        //    //act
+        //    list1.Add(5);
+        //    list1.Add(10);
+        //    list1.Add(13);
+        //    list1.Add(5);
+        //    list1.Add(7);
+        //    list1.Remove(5);
+        //    actual = list1[0];
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
     }
 }

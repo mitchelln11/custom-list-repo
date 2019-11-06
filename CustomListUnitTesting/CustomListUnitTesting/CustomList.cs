@@ -15,16 +15,16 @@ namespace CustomClassList
                 return items[i];
             }
             set
-            {  
+            {
                 items[i] = value;
             }
         }
         private int count;
         T[] items;
 
-        public int Count 
+        public int Count
         {
-            get 
+            get
             {
                 return count;
             }
@@ -60,18 +60,27 @@ namespace CustomClassList
                 tempArrayVal = new T[capacity]; //Create empty list
                 for (int i = 0; i < count; i++) // If we don't loop through, all the values before this will reset to 0;
                 {
-                tempArrayVal[i] = items[i]; //set loop iteration to list
+                    tempArrayVal[i] = items[i]; //set loop iteration to list
                 }
                 items = tempArrayVal; // assign value
             }
             items[count] = item;
             count++;
-
         }
 
-        public bool Remove(T item)
+        public void Remove(T item)
         {
-            return true;
+            //T[] tempArrayVal;
+            for (int i = 0; i < count; i++) // If we don't loop through, all the values before this will reset to 0;
+            {
+                if (item.Equals(items[i])) ;
+                {
+                    //return true; // switch void tobool if trueor falseis needed
+                }
+            }
+            //items = tempArrayVal; // assign value
+            items[count] = item;
+            count--;
         }
     }
 }
