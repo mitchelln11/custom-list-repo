@@ -8,15 +8,6 @@ namespace CustomClassList
 {
     public class CustomClassList<T>
     {
-        //member variables
-
-        //private T[] arr = new T[100];
-        //public int nextIndex = 0;
-        //public T this[int i] => arr[i]; //Indexer to allow square brackets to check index
-
-
-
-        private double[] val = new double[3];
         public T this[int i]
         {
             get
@@ -28,8 +19,6 @@ namespace CustomClassList
                 items[i] = value;
             }
         }
-
-
         private int count;
         T[] items;
 
@@ -59,23 +48,9 @@ namespace CustomClassList
         {
             capacity = 4;
             count = 0;
-            items = new T[capacity]; //Trying to double up
+            items = new T[capacity];
         }
 
-
-        // member methods
-        //public void SwapCapacity<T>(ref T item1, ref T item2)
-        //{
-        //    T temp;
-        //    temp = item1;
-        //    item1 = item2;
-        //    item2 = temp;
-        //}
-
-        //public CustomClassList()
-        //{
-        //    Count = 0;
-        //}
         public void Add(T item)
         {
             T[] tempArrayVal;
@@ -92,15 +67,11 @@ namespace CustomClassList
             items[count] = item;
             count++;
 
-            //if (nextIndex >= arr.Length)
-            //    throw new IndexOutOfRangeException($"The collection can hold only {arr.Length} elements.");
-            //arr[nextIndex++] = item;
-
         }
 
-        //public bool Remove(T item)
-        //{
-        //    return true;
-        //}
+        public bool Remove(T item)
+        {
+            return true;
+        }
     }
 }

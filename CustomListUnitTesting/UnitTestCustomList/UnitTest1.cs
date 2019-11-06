@@ -96,23 +96,26 @@ namespace UnitTestCustomList
             Assert.AreEqual(expected, actual);
         }
 
-        //[TestMethod]
-        //public void Add_Based_On_Boolean()
-        //{
-        //    //arrange
-        //    CustomClassList<bool> list1 = new CustomClassList<bool>();
-        //    int expected = 8;
-        //    bool actual;
-        //    bool trueTest = true;
+        [TestMethod]
+        public void Add_Based_On_Boolean()
+        {
+            //arrange
+            CustomClassList<bool> list1 = new CustomClassList<bool>();
+            bool expected = true;
+            bool actual;
+            bool trueTest1 = true;
+            bool trueTest2 = false;
+            bool trueTest3 = true;
 
-        //    //act
-        //    list1.Add(trueTest);
-        //    actual = list1[capacity];
-        //    // If count = capacity, return true
+            //act
+            list1.Add(trueTest1);
+            list1.Add(trueTest2);
+            list1.Add(trueTest3);
+            actual = list1[2];
+            // If count = capacity, return true
 
-
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
