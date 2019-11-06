@@ -43,11 +43,11 @@ namespace UnitTestCustomList
             double double4 = 4.0;
             double double5 = 5.0;
             //act
-            doublelist1.Addto(double1);
-            doublelist1.Addto(double2);
-            doublelist1.Addto(double3);
-            doublelist1.Addto(double4);
-            doublelist1.Addto(double5);
+            doublelist1.Add(double1);
+            doublelist1.Add(double2);
+            doublelist1.Add(double3);
+            doublelist1.Add(double4);
+            doublelist1.Add(double5);
             actual = doublelist1[4];
             //Assert
             Assert.AreEqual(expected, actual);
