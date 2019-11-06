@@ -9,7 +9,23 @@ namespace CustomClassList
     public class CustomClassList<T>
     {
         //member variables
-        //public int Count { get; }
+
+        private T[] arr = new T[100];
+        int nextIndex = 0;
+
+        public T this[int i] => arr[i];
+        //public T this[int i]
+        //{
+        //    get
+        //    {
+        //        return arr[i];
+        //    }
+        //    set
+        //    {
+        //        arr[i] = value;
+        //    }
+        //}
+
         private int count;
         T[] items;
 
@@ -40,7 +56,6 @@ namespace CustomClassList
             capacity = 4;
             count = 0;
             items = new T[capacity]; //Trying to double up
-
         }
 
 
@@ -72,6 +87,13 @@ namespace CustomClassList
             }
             items[count] = item;
             count++;
+        }
+
+        public void Addto(T value)
+        {
+            if (nextIndex >= arr.Length)
+                throw new IndexOutOfRangeException($"The collection can hold only {arr.Length} elements.");
+            arr[nextIndex++] = value;
         }
 
         //public bool Remove(T item)

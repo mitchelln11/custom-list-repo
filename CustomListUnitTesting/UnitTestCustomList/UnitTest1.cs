@@ -30,28 +30,28 @@ namespace UnitTestCustomList
             Assert.AreEqual(expected, actual);
         }
 
-        //[TestMethod]
-        //public void CustomList_Add_AddingFive_Double()
-        //{
-        //    //arrange
-        //    CustomClassList<double> doublelist1 = new CustomClassList<double>();
-        //    double expected = 5.0;
-        //    double actual;
-        //    double double1 = 1.0;
-        //    double double2 = 2.0;
-        //    double double3 = 3.0;
-        //    double double4 = 4.0;
-        //    double double5 = 5.0;
-        //    //act
-        //    doublelist1.Add(double1);
-        //    doublelist1.Add(double2);
-        //    doublelist1.Add(double3);
-        //    doublelist1.Add(double4);
-        //    doublelist1.Add(double5);
-        //    actual = doublelist1[4];
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+        [TestMethod]
+        public void CustomList_Add_AddingFive_Double()
+        {
+            //arrange
+            CustomClassList<double> doublelist1 = new CustomClassList<double>();
+            double expected = 5.0;
+            double actual;
+            double double1 = 1.0;
+            double double2 = 2.0;
+            double double3 = 3.0;
+            double double4 = 4.0;
+            double double5 = 5.0;
+            //act
+            doublelist1.Addto(double1);
+            doublelist1.Addto(double2);
+            doublelist1.Addto(double3);
+            doublelist1.Addto(double4);
+            doublelist1.Addto(double5);
+            actual = doublelist1[4];
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
         [TestMethod]
         public void CustomList_Add_AddingFiveStrings()
