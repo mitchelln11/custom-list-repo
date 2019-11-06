@@ -53,28 +53,28 @@ namespace UnitTestCustomList
         //    Assert.AreEqual(expected, actual);
         //}
 
-        //[TestMethod]
-        //public void CustomList_Add_AddingFiveStrings()
-        //{
-        //    arrange
-        //    CustomClassList<string> stringlist1 = new CustomClassList<string>();
-        //    string expected = "test5";
-        //    int actual;
-        //    string string1 = "test1";
-        //    string string2 = "test2";
-        //    string string3 = "test3";
-        //    string string4 = "test4";
-        //    string string5 = "test5";
-        //    act
-        //    stringlist1.Add(string1);
-        //    stringlist1.Add(string2);
-        //    stringlist1.Add(string3);
-        //    stringlist1.Add(string4);
-        //    stringlist1.Add(string5);
-        //    actual = stringlist1.Count;
-        //    Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+        [TestMethod]
+        public void CustomList_Add_AddingFiveStrings()
+        {
+            //arrange
+            CustomClassList<string> stringlist1 = new CustomClassList<string>();
+            int expected = 5;
+            int actual;
+            string string1 = "test1";
+            string string2 = "test2";
+            string string3 = "test3";
+            string string4 = "test4";
+            string string5 = "test5";
+            //act
+            stringlist1.Add(string1);
+            stringlist1.Add(string2);
+            stringlist1.Add(string3);
+            stringlist1.Add(string4);
+            stringlist1.Add(string5);
+            actual = stringlist1.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
         [TestMethod]
         public void Add_Swap_List()
@@ -100,14 +100,15 @@ namespace UnitTestCustomList
         //public void Add_Based_On_Boolean()
         //{
         //    //arrange
-        //    CustomClassList<string> list1 = new CustomClassList<string>();
-        //    bool expected = true;
+        //    CustomClassList<bool> list1 = new CustomClassList<bool>();
+        //    int expected = 8;
         //    bool actual;
         //    bool trueTest = true;
 
         //    //act
         //    list1.Add(trueTest);
-        //    actual = list1[0];
+        //    actual = list1[capacity];
+        //    // If count = capacity, return true
 
 
         //    //Assert

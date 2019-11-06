@@ -68,11 +68,10 @@ namespace CustomClassList
                 {
                 tempArrayVal[i] = items[i]; //set loop iteration to list
                 }
-                items = tempArrayVal; // assign value 
+                items = tempArrayVal; // assign value
             }
             items[count] = item;
             count++;
-            
         }
 
         //public bool Remove(T item)
