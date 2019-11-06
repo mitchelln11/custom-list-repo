@@ -56,7 +56,7 @@ namespace UnitTestCustomList
         //[TestMethod]
         //public void CustomList_Add_AddingFiveStrings()
         //{
-        //    //arrange
+        //    arrange
         //    CustomClassList<string> stringlist1 = new CustomClassList<string>();
         //    string expected = "test5";
         //    int actual;
@@ -65,14 +65,14 @@ namespace UnitTestCustomList
         //    string string3 = "test3";
         //    string string4 = "test4";
         //    string string5 = "test5";
-        //    //act
+        //    act
         //    stringlist1.Add(string1);
         //    stringlist1.Add(string2);
         //    stringlist1.Add(string3);
         //    stringlist1.Add(string4);
         //    stringlist1.Add(string5);
         //    actual = stringlist1.Count;
-        //    //Assert
+        //    Assert
         //    Assert.AreEqual(expected, actual);
         //}
 

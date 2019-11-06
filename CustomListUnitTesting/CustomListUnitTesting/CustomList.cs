@@ -20,6 +20,7 @@ namespace CustomClassList
                 return count;
             }
         }
+
         private int capacity;
         public int Capacity //Pulls value from private version of capacity
         {
@@ -37,6 +38,7 @@ namespace CustomClassList
         public CustomClassList()
         {
             capacity = 4;
+            count = 0;
             items = new T[capacity]; //Trying to double up
 
         }
@@ -57,15 +59,20 @@ namespace CustomClassList
         //}
         public void Add(T item)
         {
+            T[] tempArrayVal;
             if (count == capacity)
             {
-                items[count] = item;
-                count++;
+                capacity *= 2;
+                tempArrayVal = new T[capacity];
+                for (int i = 0; i < count; i++)
+                {
+                tempArrayVal[i] = items[i];
+                }
+                items = tempArrayVal;
             }
-            else
-            {
-
-            }
+            items[count] = item;
+            count++;
+            
         }
 
         //public bool Remove(T item)
