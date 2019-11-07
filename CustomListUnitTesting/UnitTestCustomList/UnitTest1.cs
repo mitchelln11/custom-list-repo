@@ -186,7 +186,7 @@ namespace UnitTestCustomList
         {
             //arrange
             CustomClassList<int> list1 = new CustomClassList<int>();
-            string expected = "1,2";
+            string expected = "12";
             string actual;
             int int1 = 1;
             int int2 = 2;
@@ -204,7 +204,7 @@ namespace UnitTestCustomList
         {
             //arrange
             CustomClassList<string> list1 = new CustomClassList<string>();
-            string expected = "J,A,P,A,N";
+            string expected = "JAPAN";
             string actual;
             //act
             list1.Add("J");
@@ -223,7 +223,7 @@ namespace UnitTestCustomList
         {
             //arrange
             CustomClassList<string> list1 = new CustomClassList<string>();
-            string expected = "Good,As,Gold";
+            string expected = "GoodAsGold";
             string actual;
             //act
             list1.Add("Good");
