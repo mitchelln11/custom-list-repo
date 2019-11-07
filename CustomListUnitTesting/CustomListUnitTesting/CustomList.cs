@@ -51,6 +51,7 @@ namespace CustomClassList
             items = new T[capacity];
         }
 
+        // ---------------Custom Add Method-------------------------------------
         public void Add(T item)
         {
             T[] tempArrayVal;
@@ -68,18 +69,22 @@ namespace CustomClassList
             count++;
         }
 
+        // ---------------Custom Remove Method-------------------------------------
         public void Remove(T item)
         {
-            //T[] tempArrayVal;
-            for (int i = 0; i < count; i++) // If we don't loop through, all the values before this will reset to 0;
+            T[] tempArrayVal = new T[capacity];
+            for (int i = 0, j = 0; i < count; i++, j++) // If we don't loop through, all the values before this will reset to 0;
             {
-                if (item.Equals(items[i])) ;
+                if (item.Equals(items[i]))
                 {
-                    //return true; // switch void tobool if trueor falseis needed
+                    j--; // Needs to be here because the j++ runs after this is done. Essentially cancels out the j for one run
+                }
+                else
+                {
+                    tempArrayVal[j] = items[i];
                 }
             }
-            //items = tempArrayVal; // assign value
-            items[count] = item;
+            items = tempArrayVal;
             count--;
         }
     }

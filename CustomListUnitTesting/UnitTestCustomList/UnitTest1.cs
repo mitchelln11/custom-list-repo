@@ -143,15 +143,17 @@ namespace UnitTestCustomList
         public void CustomList_Remove_Index()
         {
             //arrange
-            CustomClassList<double> doublelist1 = new CustomClassList<double>();
-            double expected = 3;
-            double actual;
+            CustomClassList<int> doublelist1 = new CustomClassList<int>();
+            int expected = 3;
+            int actual;
 
             //act
-            doublelist1.Add(5.0);
-            doublelist1.Add(4.0);
-            doublelist1.Add(3.0);
-            doublelist1.Remove(4.0);
+            doublelist1.Add(5);
+            doublelist1.Add(4);
+            doublelist1.Add(3);
+            doublelist1.Remove(4); //Gets to this point, just doesn't do anything. Ask why numbers are showing as int instead of decimals
+            doublelist1.Add(6);
+            doublelist1.Add(7);
 
             actual = doublelist1[1];
             //Assert
@@ -159,23 +161,23 @@ namespace UnitTestCustomList
         }
 
         //Add number 5, 10, 13, 5, 7, remove first 5 found
-        //[TestMethod]
-        //public void Remove_First_Instance_Of_value()
-        //{
-        //    //arrange
-        //    CustomClassList<int> list1 = new CustomClassList<int>();
-        //    int expected = 10;
-        //    int actual;
-        //    //act
-        //    list1.Add(5);
-        //    list1.Add(10);
-        //    list1.Add(13);
-        //    list1.Add(5);
-        //    list1.Add(7);
-        //    list1.Remove(5);
-        //    actual = list1[0];
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+        [TestMethod]
+        public void Remove_First_Instance_Of_value()
+        {
+            //arrange
+            CustomClassList<int> list1 = new CustomClassList<int>();
+            int expected = 10;
+            int actual;
+            //act
+            list1.Add(5);
+            list1.Add(10);
+            list1.Add(13);
+            list1.Add(5);
+            list1.Add(7);
+            list1.Remove(5);
+            actual = list1[0];
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
