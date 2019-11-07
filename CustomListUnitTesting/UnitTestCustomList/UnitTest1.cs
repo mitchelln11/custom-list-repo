@@ -160,7 +160,7 @@ namespace UnitTestCustomList
             Assert.AreEqual(expected, actual);
         }
 
-        //Add number 5, 10, 13, 5, 7, remove first 5 found
+        //Add number 5, 10, 13, 5, 7, remove 5
         [TestMethod]
         public void Remove_First_Instance_Of_value()
         {
@@ -179,5 +179,84 @@ namespace UnitTestCustomList
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        //----------------Override toString--------------
+        [TestMethod]
+        public void Override_Numbers_To_String()
+        {
+            //arrange
+            CustomClassList<int> list1 = new CustomClassList<int>();
+            string expected = "1,2";
+            string actual;
+            int int1 = 1;
+            int int2 = 2;
+            //act
+            list1.Add(int1);
+            list1.Add(int2);
+
+            actual = list1.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Override_Letters_To_String()
+        {
+            //arrange
+            CustomClassList<string> list1 = new CustomClassList<string>();
+            string expected = "J,A,P,A,N";
+            string actual;
+            //act
+            list1.Add("J");
+            list1.Add("A");
+            list1.Add("P");
+            list1.Add("A");
+            list1.Add("N");
+
+            actual = list1.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Override_Words_To_String()
+        {
+            //arrange
+            CustomClassList<string> list1 = new CustomClassList<string>();
+            string expected = "Good,As,Gold";
+            string actual;
+            //act
+            list1.Add("Good");
+            list1.Add("As");
+            list1.Add("Gold");
+
+            actual = list1.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //----------------Overloading Testing------------
+        //[TestMethod]
+        //public void Overloading_Lists()
+        //{
+        //    //arrange
+        //    CustomClassList<int> list1 = new CustomClassList<int>();
+        //    CustomClassList<int> list2 = new CustomClassList<int>();
+        //    int expected = actual; //[1,3,5,2,1,6]
+        //    int actual;
+        //    //act
+        //    //list 1
+        //    list1.Add(1);
+        //    list1.Add(3);
+        //    list1.Add(5);
+
+        //    // list2
+        //    list2.Add(2);
+        //    list2.Add(1);
+        //    list2.Add(6);
+        //    actual = list1[0] + list2[0];
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
     }
 }

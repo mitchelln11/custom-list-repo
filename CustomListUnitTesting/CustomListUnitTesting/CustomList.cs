@@ -87,5 +87,30 @@ namespace CustomClassList
             items = tempArrayVal;
             count--;
         }
+
+        // ---------------toSting Overloading-------------------------------------
+
+
     }
+    // ---------------Operator Overloading-------------------------------------
+    //public class CustomClassList2<T>
+    //{
+    //    // For overriding operators
+    //    public int number1, number2;
+    //    public CustomClassList2(int num1, int num2)
+    //    {
+    //        // For overriding operators
+    //        number1 = num1;
+    //        number2 = num2;
+    //    }
+
+    //    public static CustomClassList2<T> operator -(CustomClassList2<T> c1)
+    //    {
+    //        c1.number1 = -c1.number1;
+    //        c1.number2 = -c1.number2;
+    //        Console.WriteLine("Number1" + c1.number1);
+    //        Console.ReadLine();
+    //        return c1;
+    //    }
+    //}
 }
