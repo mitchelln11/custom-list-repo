@@ -147,14 +147,15 @@ namespace CustomClassList
 
         }
 
-        public static CustomClassList<T> ZipLists(CustomClassList<T> list1, CustomClassList<T> list2)
+        public CustomClassList<T> ZipLists(CustomClassList<T> list2)
         {
             CustomClassList<T> comboList = new CustomClassList<T>();
-            for (int i = 0, j=0; i < list1.count; i++, j++)
+            //CustomClassList<T> list1 = new CustomClassList<T>();
+            for (int i = 0; i < this.count; i++)
             {
-                if ( (list1[i] != null) || (list2[i] != null) )
+                if ( (this.items[i] != null) || (list2[i] != null) )
                 {
-                    comboList.Add(list1[i]);
+                    comboList.Add(this.items[i]);
                     comboList.Add(list2[i]);
                 }
             }
