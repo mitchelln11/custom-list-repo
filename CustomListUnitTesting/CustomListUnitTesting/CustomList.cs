@@ -8,7 +8,7 @@ namespace CustomClassList
 {
     public class CustomClassList<T>
     {
-        public T this[int i]
+        public T this[int i] // Creates ability to check index
         {
             get
             {
@@ -23,7 +23,6 @@ namespace CustomClassList
         // Member variables
         private int count;
         T[] items;
-
 
         public int Count
         {
@@ -92,12 +91,7 @@ namespace CustomClassList
         }
 
         // ---------------Operator Overloading-------------------------------------
-        //public static CustomClassList<T> operator + (CustomClassList<T> l1, CustomClassList<T> l2)
-        //{
-        //    // Enter a value in order to remove + operator error
-        //}
-
-        public override string ToString()
+         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             for (int i=0; i<count; i++)
@@ -105,6 +99,22 @@ namespace CustomClassList
                 sb.Append(items[i]);
             }
             return sb.ToString();
+        }
+
+        public static CustomClassList<T> operator +(CustomClassList<T> list1, CustomClassList<T> list2)
+        {
+            CustomClassList<T> comboList = new CustomClassList<T>();
+            //list1 = new CustomClassList<T>(); // Don't need to instantiate lists when they're coming through as parameters
+            //list2 = new CustomClassList<T>();
+            for (int i=0; i<list1.count;i++)
+            {
+                comboList.Add(list1[i]);
+            }
+            for (int i = 0; i < list2.count; i++)
+            {
+                comboList.Add(list2[i]);
+            }
+            return comboList;
         }
     }
 }

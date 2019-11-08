@@ -236,27 +236,28 @@ namespace UnitTestCustomList
         }
 
         //----------------Overloading Testing------------
-        //[TestMethod]
-        //public void Overloading_Lists()
-        //{
-        //    //arrange
-        //    CustomClassList<int> list1 = new CustomClassList<int>();
-        //    CustomClassList<int> list2 = new CustomClassList<int>();
-        //    int expected = actual; //[1,3,5,2,1,6]
-        //    int actual;
-        //    //act
-        //    //list 1
-        //    list1.Add(1);
-        //    list1.Add(3);
-        //    list1.Add(5);
+        [TestMethod]
+        public void Overloading_Lists()
+        {
+            //arrange
+            CustomClassList<int> list1 = new CustomClassList<int>();
+            CustomClassList<int> list2 = new CustomClassList<int>();
+            string expected = "135216";
+            
+            //act
+            //list 1
+            list1.Add(1);
+            list1.Add(3);
+            list1.Add(5);
 
-        //    // list2
-        //    list2.Add(2);
-        //    list2.Add(1);
-        //    list2.Add(6);
-        //    actual = list1[0] + list2[0];
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            // list2
+            list2.Add(2);
+            list2.Add(1);
+            list2.Add(6);
+
+            CustomClassList<int> comboList = list1 + list2;
+            //Assert
+            Assert.AreEqual(expected, comboList.ToString());
+        }
     }
 }
