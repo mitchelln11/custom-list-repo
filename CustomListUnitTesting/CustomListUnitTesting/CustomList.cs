@@ -114,7 +114,6 @@ namespace CustomClassList
         {
             CustomClassList<T> comboList = new CustomClassList<T>();
             //list1 = new CustomClassList<T>(); // Don't need to instantiate lists when they're coming through as parameters
-            //list2 = new CustomClassList<T>();
             for (int i=0; i<list1.count;i++)
             {
                 comboList.Add(list1[i]);

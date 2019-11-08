@@ -380,6 +380,7 @@ namespace UnitTestCustomList
             list2.Add("Remain");
 
             CustomClassList<string> actual = list1.ZipLists(list2);
+
             //Assert
             Assert.AreEqual(expected, actual.ToString());
         }
