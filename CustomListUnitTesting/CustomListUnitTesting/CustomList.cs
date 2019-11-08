@@ -146,5 +146,16 @@ namespace CustomClassList
             return comboList; // Must have return outside the for loops when overriding operators
 
         }
+
+        public static int ZipLists(CustomClassList<T> list1, CustomClassList<T> list2)
+        {
+            CustomClassList<T> comboList = new CustomClassList<T>();
+            for (int i = 0; i < list1.count; i++)
+            {
+                comboList.Add(list1[i]);
+                comboList.Add(list2[i]);
+            }
+            return comboList;
+        }
     }
 }

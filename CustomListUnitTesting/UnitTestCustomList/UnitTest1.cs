@@ -333,9 +333,9 @@ namespace UnitTestCustomList
             Assert.AreEqual(expected, actual.ToString());
         }
 
-        // 
+        // ----------------Zipping Tests----------------
         [TestMethod]
-        public void Zip_Lists()
+        public void Zip_Number_Lists()
         {
             //arrange
             CustomClassList<int> list1 = new CustomClassList<int>();
@@ -357,5 +357,30 @@ namespace UnitTestCustomList
             //Assert
             Assert.AreEqual(expected, comboList.ToString());
         }
+
+        //[TestMethod]
+        //public void Zip_Word_Lists()
+        //{
+        //    //arrange
+        //    CustomClassList<string> list1 = new CustomClassList<string>();
+        //    CustomClassList<string> list2 = new CustomClassList<string>();
+        //    string expected = "FoolsMultiplyWhenTheWiseRemainSilent";
+
+        //    //act
+        //    //list 1
+        //    list1.Add("Fools");
+        //    list1.Add("When");
+        //    list1.Add("Wise");
+        //    list1.Add("Silent");
+
+        //    // list2
+        //    list2.Add("Multiply");
+        //    list2.Add("The");
+        //    list2.Add("Remain");
+
+        //    CustomClassList<string> comboList = list1 + list2;
+        //    //Assert
+        //    Assert.AreEqual(expected, comboList.ToString());
+        //}
     }
 }
