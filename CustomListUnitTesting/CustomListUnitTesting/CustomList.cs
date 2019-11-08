@@ -144,13 +144,11 @@ namespace CustomClassList
                 }
             }
             return comboList; // Must have return outside the for loops when overriding operators
-
         }
 
         public CustomClassList<T> ZipLists(CustomClassList<T> list2)
         {
             CustomClassList<T> comboList = new CustomClassList<T>();
-            //CustomClassList<T> list1 = new CustomClassList<T>();
             for (int i = 0; i < this.count; i++)
             {
                 if ( (this.items[i] != null) || (list2[i] != null) )
