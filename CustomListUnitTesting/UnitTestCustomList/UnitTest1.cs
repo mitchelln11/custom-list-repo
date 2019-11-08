@@ -237,7 +237,7 @@ namespace UnitTestCustomList
 
         //----------------Overloading Testing------------
         [TestMethod]
-        public void Overloading_Lists()
+        public void Overloading_Plus_Operator_Int_Lists()
         {
             //arrange
             CustomClassList<int> list1 = new CustomClassList<int>();
@@ -253,6 +253,104 @@ namespace UnitTestCustomList
             // list2
             list2.Add(2);
             list2.Add(1);
+            list2.Add(6);
+
+            CustomClassList<int> comboList = list1 + list2;
+            //Assert
+            Assert.AreEqual(expected, comboList.ToString());
+        }
+
+        [TestMethod]
+        public void Overloading_Plus_Operator_Strings_Lists()
+        {
+            //arrange
+            CustomClassList<string> list1 = new CustomClassList<string>();
+            CustomClassList<string> list2 = new CustomClassList<string>();
+            string expected = "AMERICA";
+
+            //act
+            //list 1
+            list1.Add("A");
+            list1.Add("M");
+            list1.Add("E");
+
+            // list2
+            list2.Add("R");
+            list2.Add("I");
+            list2.Add("C");
+            list2.Add("A");
+
+            CustomClassList<string> comboList = list1 + list2;
+            //Assert
+            Assert.AreEqual(expected, comboList.ToString());
+        }
+
+        [TestMethod]
+        public void Overloading_Minus_Operator_Integer_Lists()
+        {
+            //arrange
+            CustomClassList<int> list1 = new CustomClassList<int>();
+            CustomClassList<int> list2 = new CustomClassList<int>();
+            string expected = "26";
+
+            //act
+            //list 1
+            list1.Add(1);
+            list1.Add(3);
+            list1.Add(5);
+
+            // list2
+            list2.Add(2);
+            list2.Add(1);
+            list2.Add(6);
+
+            CustomClassList<int> actual = list2 - list1;
+            //Assert
+            Assert.AreEqual(expected, actual.ToString());
+        }
+
+        [TestMethod]
+        public void Overloading_Minus_Operator_String_Lists()
+        {
+            //arrange
+            CustomClassList<string> list1 = new CustomClassList<string>();
+            CustomClassList<string> list2 = new CustomClassList<string>();
+            string expected = "OU";
+
+            //act
+            //list 1
+            list1.Add("T");
+            list1.Add("R");
+            list1.Add("Y");
+
+            // list2
+            list2.Add("O");
+            list2.Add("U");
+            list2.Add("T");
+
+            CustomClassList<string> actual = list2 - list1;
+            //Assert
+            Assert.AreEqual(expected, actual.ToString());
+        }
+
+        // 
+        [TestMethod]
+        public void Zip_Lists()
+        {
+            //arrange
+            CustomClassList<int> list1 = new CustomClassList<int>();
+            CustomClassList<int> list2 = new CustomClassList<int>();
+            string expected = "123456";
+
+            //act
+            //list 1
+            list1.Add(1);
+            list1.Add(3);
+            list1.Add(5);
+
+            // list2
+            list2.Add(2);
+            list2.Add(4);
             list2.Add(6);
 
             CustomClassList<int> comboList = list1 + list2;

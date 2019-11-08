@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomClassList
 {
-    public class CustomClassList<T>
+    public class CustomClassList<T> : IEnumerable
     {
         public T this[int i] // Creates ability to check index
         {
@@ -101,6 +102,14 @@ namespace CustomClassList
             return sb.ToString();
         }
 
+        public IEnumerator GetEnumerator() //Allows you to do a foreach loop
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                yield return items[i];
+            }
+        }
+
         public static CustomClassList<T> operator +(CustomClassList<T> list1, CustomClassList<T> list2)
         {
             CustomClassList<T> comboList = new CustomClassList<T>();
@@ -115,6 +124,27 @@ namespace CustomClassList
                 comboList.Add(list2[i]);
             }
             return comboList;
+        }
+
+        public static CustomClassList<T> operator -(CustomClassList<T> list1, CustomClassList<T> list2)
+        {
+            CustomClassList<T> comboList = new CustomClassList<T>();
+            for (int i = 0; i < list1.count; i++)
+            {
+                bool isEqual = false;
+                for (int j = 0; j < list2.count; j++)
+                {
+                    if (list1[i].Equals(list2[j])) //Don't add to the list if equal
+                    {
+                        isEqual = true;
+                    }
+                    else if((j == list2.count-1) && (isEqual == false)){
+                        comboList.Add(list1[i]);
+                    }
+                }
+            }
+            return comboList; // Must have return outside the for loops when overriding operators
+
         }
     }
 }
