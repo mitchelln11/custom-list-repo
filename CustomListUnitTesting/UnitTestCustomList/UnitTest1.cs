@@ -235,6 +235,7 @@ namespace UnitTestCustomList
             Assert.AreEqual(expected, actual);
         }
 
+
         //----------------Overloading Testing------------
         [TestMethod]
         public void Overloading_Plus_Operator_Int_Lists()
@@ -255,9 +256,9 @@ namespace UnitTestCustomList
             list2.Add(1);
             list2.Add(6);
 
-            CustomClassList<int> comboList = list1 + list2;
+            CustomClassList<int> actual = list1 + list2;
             //Assert
-            Assert.AreEqual(expected, comboList.ToString());
+            Assert.AreEqual(expected, actual.ToString());
         }
 
         [TestMethod]
@@ -280,9 +281,9 @@ namespace UnitTestCustomList
             list2.Add("C");
             list2.Add("A");
 
-            CustomClassList<string> comboList = list1 + list2;
+            CustomClassList<string> actual = list1 + list2;
             //Assert
-            Assert.AreEqual(expected, comboList.ToString());
+            Assert.AreEqual(expected, actual.ToString());
         }
 
         [TestMethod]
@@ -353,9 +354,9 @@ namespace UnitTestCustomList
             list2.Add(4);
             list2.Add(6);
 
-            CustomClassList<int> comboList = list1 + list2;
+            CustomClassList<int> actual = list1 + list2;
             //Assert
-            Assert.AreEqual(expected, comboList.ToString());
+            Assert.AreEqual(expected, actual.ToString());
         }
 
         //[TestMethod]
@@ -378,9 +379,9 @@ namespace UnitTestCustomList
         //    list2.Add("The");
         //    list2.Add("Remain");
 
-        //    CustomClassList<string> comboList = list1 + list2;
+        //    CustomClassList<string> actual = list1 + list2;
         //    //Assert
-        //    Assert.AreEqual(expected, comboList.ToString());
+        //    Assert.AreEqual(expected, actual.ToString());
         //}
     }
 }
